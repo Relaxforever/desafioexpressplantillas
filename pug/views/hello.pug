@@ -1,0 +1,31 @@
+
+
+html
+    head
+        title='Mi primera plantilla Pug JS'
+    body
+        h1=mensaje
+
+        block content
+            form(action="/api/productos" method="POST")
+                    p='Title'
+                    input(
+                        type='text'
+                        name='title'
+                    )
+                    p='Price'
+                    input(
+                        type='number'
+                        name='price'
+                    )
+                    p='Thumbnail'
+                    input(
+                        type='text'
+                        name='thumbnail'
+                    )
+                    button Submit
+
+
+
+        a(class='button' href='http://localhost:8080/api/productos/') Ver Productos
+

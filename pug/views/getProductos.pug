@@ -1,0 +1,17 @@
+html
+    head
+        title='Plantilla Get Productos'
+    body
+
+        ul
+            for items in results
+                table
+                    tr
+                        th
+                            h1=items.title
+                        th
+                            h3=items.price
+                        th
+                            img(src=items.thumbnail)
+
+    a(class='button' href='http://localhost:8080/api/productos/productos') Registrar Productos
