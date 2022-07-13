@@ -18,7 +18,11 @@ app.get('/', async (req, res) => {
 
 app.get('/productos', async (req, res) => {
     const arrayAll = await ContenedorEx.getAll()
-    res.render("pages/productList",  { arrayAll });
+    if (arrayAll !== undefined) {
+        res.render("pages/productList",  { arrayAll });
+    }else {
+        res.render("pages/noProducts")
+    }
 })
 
 

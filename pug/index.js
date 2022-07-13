@@ -25,7 +25,11 @@ app.get('/productos', (req, res) => {
 
 app.get('/', async (req, res) => {
     const arrayAll = await ContenedorEx.getAll()
-    res.render('getProductos.pug', {results: arrayAll})
+    if (arrayAll !== undefined) {
+        res.render('getProductos.pug', {results: arrayAll})
+    }else {
+        res.render("noProduct.pug"), {mensaje: 'No Hay Productos'}
+    }
     //return res.send( arrayAll)
 })
 

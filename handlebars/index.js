@@ -39,7 +39,11 @@ app.get('/productos', async (req, res) => {
     const arrayAll = await ContenedorEx.getAll()
     //return res.send( arrayAll)
     console.log(arrayAll)
-    res.render("productList", { productList: arrayAll, listExists: true });
+    if (arrayAll !== undefined) {
+        res.render("productList", {productList: arrayAll, listExists: true});
+    }else {
+        res.render("noProducts.hbs")
+    }
 })
 
 app.post('/productos', async (req, res) => {
